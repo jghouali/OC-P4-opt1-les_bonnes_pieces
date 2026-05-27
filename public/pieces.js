@@ -14,9 +14,10 @@ console.log(pieces);
 pieces.forEach(piece => {
     console.log(piece.nom);
     let pieceDiv = document.createElement("div");
+    pieceDiv.classList.add("fiche");
     pieceDiv.innerHTML = `
     <img src="${piece.image}">
-    <h2>${piece.nom}</h2
+    <h2>${piece.nom}</h2>
     <p>
     Description :<br>${piece.description ?? "Pas de description"}<br><br>
     ${piece.prix}€<br>
