@@ -205,17 +205,34 @@ async function showProducts(piecesArray) {
     ${(piece.categorie === undefined) ? "Sans categorie" : piece.categorie}
     </p>
     `
-        console.log(avis);
+
         if (avis !== null) {
+            let avisDiv = Object.assign(document.createElement("div"), {
+                classList: "piecesDivPopup hidePopup"
+            });
             avis.forEach(avi => {
-                pieceDiv.innerHTML = pieceDiv.innerHTML +
+                avisDiv.innerHTML = avisDiv.innerHTML +
                     `
             <p>${avi.utilisateur}</p>
             <p>${avi.commentaire}</p>
             `
             })
+            pieceDiv.appendChild(avisDiv);
         }
+
         fichesSection.appendChild(pieceDiv);
+
+        pieceDiv.addEventListener("click", event => {
+            //console.log(event);
+            if (event.target.className === 'fiche') {
+                event.target.lastElementChild.classList.toggle("hidePopup");
+            }
+            //console.log(event.target.parentNode.className);
+            if (event.target.parentNode.className === 'fiche') {
+                event.target.parentNode.lastElementChild.classList.toggle("hidePopup");
+            }
+        }
+        );
     }
 }
 
