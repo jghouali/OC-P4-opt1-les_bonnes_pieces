@@ -41,6 +41,16 @@ main {
 	min-height: 400px;
 }
 
+.filtresForm {
+	display: flex;
+	flex-direction: column;
+}
+
+.filtresDiv {
+	display: flex;
+	flex-direction: row;
+}
+
 .filtres h3 {
 	text-align: center;
 }
@@ -57,7 +67,7 @@ main {
 	border: 1px solid;
 	padding: 8px;
 	margin: 8px;
-	width: 28%;
+	width: 240px;
 }
 
 .fiches img {
@@ -67,4 +77,10 @@ main {
 .fiches p {
 	margin-top: 4px;
 	margin-bottom: 4px;
+}
+
+.clickable {
+	color: grey;
+	text-decoration: underline;
+	cursor: pointer;
 }
